@@ -1,0 +1,3 @@
+
+class MissingArgument(ValueError):
+    pass
