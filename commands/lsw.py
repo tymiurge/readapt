@@ -22,7 +22,8 @@ class Lsw(Base):
 
     def extract_words(self):
         content = self.data_file_content()
-        words = [word.lower() for word in nltk.word_tokenize(content) if word not in self.excludes]
+        words = [word.lower().strip() for word in nltk.word_tokenize(content)]
+        words = [word for word in words if word not in self.excludes]
         counter = Counter(words)
         ranked = counter.most_common()
         for word_tuple in ranked:
