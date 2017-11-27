@@ -1,7 +1,7 @@
 """
 Usage:
-    readupp lss <data_file> [-s] [--head=INT] [--with=WORDS] [--only=INT]
-    readupp lsw <data_file>
+    readupp lss <data_file>
+    readupp lsw <data_file> [--wt=FILES]
 """
 
 from docopt import docopt
