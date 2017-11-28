@@ -22,7 +22,7 @@ class Lsw(Base):
 
     def extract_words(self):
         content = self.data_file_content()
-        words = [word.lower().strip() for word in nltk.word_tokenize(content)]
+        words = [self._clean(word) for word in nltk.word_tokenize(content)]
         words = [word for word in words if word not in self.excludes]
         counter = Counter(words)
         ranked = counter.most_common()
@@ -33,3 +33,10 @@ class Lsw(Base):
     def _word_slot(word):
         spaced_slot = ' ' * (Lsw.word_slot_size - len(word))
         return word + spaced_slot
+
+    @staticmethod
+    def _clean(word):
+        word = word.lower().strip()
+        if '.' in word:
+            word = word.replace('.', '')
+        return word
