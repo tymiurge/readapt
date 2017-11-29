@@ -1,7 +1,13 @@
 """
 Usage:
-    readupp lss <data_file>
+    readupp lss <data_file> <pattern>
     readupp lsw <data_file> [--wt=FILES]
+"""
+
+"""
+    command examples:
+    readupp.py lsw data/the-happy-prince.txt --wt="data/garbage.txt, data/known.txt"
+    readupp.py lss " fumble "
 """
 
 from docopt import docopt

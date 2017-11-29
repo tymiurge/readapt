@@ -67,3 +67,13 @@ s
 *
 t
 ;
+—
+-was
+oscar
+wilde
+“
+king
+”
+essex
+penguin
+2000

@@ -29,3 +29,9 @@ class Base(object):
                 with open(path.strip(), 'r') as data_file:
                     content = data_file.readlines()
                 self.excludes += [word.replace('\n', '') for word in content]
+
+    def get_required_opt(self, opt_name):
+        result = self.options['<' + opt_name + '>']
+        if result is None:
+            raise MissingArgument(opt_name + ' should be defined')
+        return result
