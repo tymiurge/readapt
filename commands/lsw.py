@@ -22,7 +22,7 @@ class Lsw(Base):
 
     def extract_words(self):
         content = self.data_file_content()
-        words = [self._clean(word) for word in nltk.word_tokenize(content)]
+        words = [self._clean(word) for word in nltk.word_tokenize(content) if word.isalpha()]
         words = [word for word in words if word not in self.excludes]
         counter = Counter(words)
         ranked = counter.most_common()
